@@ -1,0 +1,31 @@
+{
+  "name": "pm2-log-schedule",
+  "version": "1.0.2",
+  "description": "PM2 Log Schedule",
+  "main": "app.js",
+  "scripts":{
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pmx": "beta"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keymetrics/pmx.git"
+  },
+  "config": {
+    "maxLogs": 10,
+    "interval": 7,
+    "pattern":"\\d{4}-\\d{2}-\\d{2}\\.log",
+    "logPath":"/home/web/logs"
+  },
+  "apps": [
+    {
+      "merge_logs": true,
+      "max_memory_restart": "200M",
+      "script": "app.js"
+    }
+  ],
+  "author": "Keymetrics Inc.",
+  "license": "MIT"
+}
